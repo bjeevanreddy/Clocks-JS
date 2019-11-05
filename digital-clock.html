@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Analog</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td{
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+    <div>
+    <table>
+        <tr>
+            <td id="hours"></td>
+            <td id="minutes"></td>
+            <td id="seconds"></td>
+        </tr>
+        </table>
+    </div>
+<body>
+    <script>
+           setInterval(time,1000);
+        function time()
+        {
+            var date=new Date();
+        var hours=date.getHours();
+        if(hours<10)
+        {
+            hours="0"+hours;
+        }
+        var minutes=date.getMinutes();
+        if(minutes<10)
+        {
+            minutes="0"+minutes;
+        }
+        // var hours1=date.getUTCHours();
+        var seconds=date.getSeconds();
+        if(seconds<10)
+        {
+            seconds="0"+seconds;
+        }
+        // var secondstd= document.getElementById('seconds');
+        document.getElementById('hours').innerHTML=hours%12||12;
+        document.getElementById('minutes').innerHTML=minutes;
+        document.getElementById('seconds').innerHTML=seconds;
+        }
+        
+     
+       
+       
+       
+    </script>
+</body>
+</html>
